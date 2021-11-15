@@ -33,12 +33,6 @@ function App() {
 			<main id="main-content">
 				{routes[page] || routes['/Error404']}
 			</main>
-			{/* <Catalog />
-      <Create />
-      <Details />
-      <Edit />
-      <Login />
-      <Register /> */}
 		</div>
 	);
 }
