@@ -8,14 +8,10 @@ function Catalog() {
 	useEffect(() => {
 		setIsLoading(true);
 		setTimeout(() => {
-			fetch(
-				'http://localhost:3030/data/games?sortBy=_createdOn%20desc'
-			)
-				.then((res) => res.json())
-				.then((games) => {
-					setGames(games);
-					setIsLoading(false);
-				});
+			gameService.getAll().then((games) => {
+				setGames(games);
+				setIsLoading(false);
+			});
 		}, 1000);
 	}, []);
 
