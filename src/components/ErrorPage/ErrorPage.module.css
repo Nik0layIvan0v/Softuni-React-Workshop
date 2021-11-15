@@ -1,0 +1,18 @@
+.error-message {
+    margin: auto;
+    text-align: center;
+    margin-top: 300px;
+}
+
+.error-message h2 {
+    color: #ffffff;
+    font-size: 300%;
+    font-size: 55px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4.8px rgba(0, 0, 0, 0.3);
+    font-family: "Agency FB";
+}
