@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import CatalogGameCard from './CatalogGameCard';
+import * as gameService from '../../services/gameService';
 
 function Catalog() {
 	const [games, setGames] = useState([]);
