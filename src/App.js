@@ -32,7 +32,7 @@ function App() {
 			login: <Login />,
 			register: <Register />,
 			'edit-game': <Edit id={gameId} />,
-			'game-details': <Details />,
+			'game-details': <Details id={gameId} />,
 			Error404: <ErrorPage />,
 		};
 

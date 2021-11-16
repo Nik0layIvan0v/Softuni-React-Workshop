@@ -24,6 +24,7 @@ function Catalog({ navigationChangeHandler }) {
 			<CatalogGameCard
 				key={game._id}
 				currentGame={game}
+				id={game._id}
 				navigationChangeHandler={navigationChangeHandler}
 			/>
 		));
