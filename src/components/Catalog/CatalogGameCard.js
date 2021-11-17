@@ -1,6 +1,6 @@
 function CatalogGameCard({ currentGame, navigationChangeHandler }) {
 	const gameDetilsLink = `/game-details/${currentGame._id}`;
-     
+
 	function detailsButtonClickHandler(e) {
 		e.preventDefault();
 		navigationChangeHandler(gameDetilsLink);

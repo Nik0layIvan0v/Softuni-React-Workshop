@@ -22,7 +22,11 @@ function App() {
 		const gameId = routeArguments[2];
 
 		const routes = {
-			home: <WelcomeWorld />,
+			home: (
+				<WelcomeWorld
+					navigationChangeHandler={navigationChangeHandler}
+				/>
+			),
 			'all-games': (
 				<Catalog
 					navigationChangeHandler={navigationChangeHandler}

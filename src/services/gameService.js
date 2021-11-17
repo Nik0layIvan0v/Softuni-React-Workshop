@@ -9,3 +9,9 @@ export function getAll() {
 export function getById(id) {
 	return fetch(API_URI + '/games/' + id).then((res) => res.json());
 }
+
+export function getLastestGames() {
+	return fetch(
+		API_URI + '/games?sortBy=_createdOn%20desc&distinct=category'
+	).then((res) => res.json());
+}
