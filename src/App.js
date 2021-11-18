@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Catalog from './components/Catalog/Catalog';
@@ -12,42 +12,43 @@ import WelcomeWorld from './components/WelcomeWorld/WelcomeWorld';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 
 function App() {
-	const [page, setPage] = useState('/home');
+	// const [page, setPage] = useState('/home');
 
-	const navigationChangeHandler = (path) => {
-		setPage(path);
-	};
+	// const navigationChangeHandler = (path) => {
+	// 	setPage(path);
+	// };
 
-	const router = (page) => {
-		const routeArguments = page.split('/');
-		const routePath = routeArguments[1];
-		const gameId = routeArguments[2];
+	// const router = (page) => {
+	// 	const routeArguments = page.split('/');
+	// 	const routePath = routeArguments[1];
+	// 	const gameId = routeArguments[2];
 
-		const routes = {
-			home: (
-				<WelcomeWorld
-					navigationChangeHandler={navigationChangeHandler}
-				/>
-			),
-			'all-games': (
-				<Catalog
-					navigationChangeHandler={navigationChangeHandler}
-				/>
-			),
-			'create-game': <Create />,
-			login: <Login />,
-			register: <Register />,
-			'edit-game': <Edit id={gameId} />,
-			'game-details': <Details id={gameId} />,
-			Error404: <ErrorPage />,
-		};
+	// 	const routes = {
+	// 		home: (
+	// 			<WelcomeWorld
+	// 				navigationChangeHandler={navigationChangeHandler}
+	// 			/>
+	// 		),
+	// 		'all-games': (
+	// 			<Catalog
+	// 				navigationChangeHandler={navigationChangeHandler}
+	// 			/>
+	// 		),
+	// 		'create-game': <Create />,
+	// 		login: <Login />,
+	// 		register: <Register />,
+	// 		'edit-game': <Edit id={gameId} />,
+	// 		'game-details': <Details id={gameId} />,
+	// 		Error404: <ErrorPage />,
+	// 	};
 
-		return routes[routePath];
-	};
+	// 	return routes[routePath];
+	// };
 
 	return (
 		<div id="box">
-			<Header navigationChangeHandler={navigationChangeHandler} />
+			{/* <Header navigationChangeHandler={navigationChangeHandler} /> */}
+			<Header />
 			<main id="main-content">
 				<Switch>
 					{/* {router(page) || router('/Error404')} */}
@@ -57,7 +58,7 @@ function App() {
 					<Route path="/login" component={Login} />
 					<Route path="/register" component={Register} />
 					<Route path="/edit-game" component={Edit} />
-					<Route path="/game-details" component={Details} />
+					<Route path="/game-details/:id" component={Details} />
 					<Route component={ErrorPage} />
 				</Switch>
 			</main>

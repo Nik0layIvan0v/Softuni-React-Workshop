@@ -1,10 +1,13 @@
-function LastAddedGame({ gameData, navigationChangeHandler }) {
+import { Link } from 'react-router-dom';
+
+//function LastAddedGame({ gameData, navigationChangeHandler }) {
+function LastAddedGame({ gameData }) {
 	const gameDetilsLink = `/game-details/${gameData._id}`;
 
-	function onClickDetailsHandler(e) {
-		e.preventDefault();
-		navigationChangeHandler(gameDetilsLink);
-	}
+	// function onClickDetailsHandler(e) {
+	// 	e.preventDefault();
+	// 	navigationChangeHandler(gameDetilsLink);
+	// }
 
 	return (
 		<div className="game">
@@ -20,13 +23,17 @@ function LastAddedGame({ gameData, navigationChangeHandler }) {
 				<span>☆</span>
 			</div>
 			<div className="data-buttons">
-				<a
+				<Link to={gameDetilsLink} className="btn details-btn">
+					Details
+				</Link>
+
+				{/* <a
 					onClick={onClickDetailsHandler}
 					href={gameDetilsLink}
 					className="btn details-btn"
 				>
 					Details
-				</a>
+				</a> */}
 			</div>
 		</div>
 	);

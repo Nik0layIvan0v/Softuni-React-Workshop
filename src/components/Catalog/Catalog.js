@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import CatalogGameCard from './CatalogGameCard';
 import * as gameService from '../../services/gameService';
 
-function Catalog({ navigationChangeHandler }) {
+//function Catalog({ navigationChangeHandler }) {
+function Catalog() {
 	const [games, setGames] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 
@@ -25,8 +26,14 @@ function Catalog({ navigationChangeHandler }) {
 				key={game._id}
 				currentGame={game}
 				id={game._id}
-				navigationChangeHandler={navigationChangeHandler}
 			/>
+
+			// <CatalogGameCard
+			// 	key={game._id}
+			// 	currentGame={game}
+			// 	id={game._id}
+			// 	navigationChangeHandler={navigationChangeHandler}
+			// />
 		));
 	}
 

@@ -1,7 +1,9 @@
 import * as cardService from '../../services/gameService.js';
 import { useEffect, useState } from 'react';
 
-function Details({ id }) {
+//function Details({ id }) {
+function Details({ match }) {
+	let id = match.params.id;
 	const [game, setGame] = useState({});
 
 	useEffect(() => {
