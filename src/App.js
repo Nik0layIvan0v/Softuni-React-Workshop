@@ -1,5 +1,5 @@
 // import { useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Catalog from './components/Catalog/Catalog';
 import Create from './components/Create/Create';
@@ -59,6 +59,17 @@ function App() {
 					<Route path="/register" component={Register} />
 					<Route path="/edit-game" component={Edit} />
 					<Route path="/game-details/:id" component={Details} />
+					<Route path="/custom">
+						<h2>Custom page</h2>
+					</Route>
+					<Route
+						path="/logout"
+						render={(props) => {
+							console.log('Logged out!!!');
+							//3rd way to redirect!
+							return <Redirect to="/" />;
+						}}
+					/>
 					<Route component={ErrorPage} />
 				</Switch>
 			</main>
