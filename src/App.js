@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
+
 import Catalog from './components/Catalog/Catalog';
 import Create from './components/Create/Create';
 import Details from './components/Details/Details';
@@ -47,7 +49,17 @@ function App() {
 		<div id="box">
 			<Header navigationChangeHandler={navigationChangeHandler} />
 			<main id="main-content">
-				{router(page) || router('/Error404')}
+				<Switch>
+					{/* {router(page) || router('/Error404')} */}
+					<Route path="/" exact component={WelcomeWorld} />
+					<Route path="/all-games" component={Catalog} />
+					<Route path="/create-game" component={Create} />
+					<Route path="/login" component={Login} />
+					<Route path="/register" component={Register} />
+					<Route path="/edit-game" component={Edit} />
+					<Route path="/game-details" component={Details} />
+					<Route component={ErrorPage} />
+				</Switch>
 			</main>
 		</div>
 	);
