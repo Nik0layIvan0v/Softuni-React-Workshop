@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
-import CatalogGameCard from './CatalogGameCard';
+import { useEffect, useState, lazy, Suspense } from 'react';
+// import CatalogGameCard from './CatalogGameCard';
 import * as gameService from '../../services/gameService';
 
 //function Catalog({ navigationChangeHandler }) {
 function Catalog() {
+	const GameCard = lazy(() => import('./CatalogGameCard'));
+
 	const [games, setGames] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 
@@ -22,11 +24,9 @@ function Catalog() {
 			return <h3 className="no-articles">No articles yet</h3>;
 		}
 		return games.map((game) => (
-			<CatalogGameCard
-				key={game._id}
-				currentGame={game}
-				id={game._id}
-			/>
+			<Suspense fallback={<p>Loading...</p>}>
+				<GameCard key={game._id} currentGame={game} id={game._id} />
+			</Suspense>
 
 			// <CatalogGameCard
 			// 	key={game._id}

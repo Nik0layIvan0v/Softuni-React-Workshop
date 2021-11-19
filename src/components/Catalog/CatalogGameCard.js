@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import React from 'react';
 //function CatalogGameCard({ currentGame, navigationChangeHandler }) {
 function CatalogGameCard({ currentGame }) {
 	const gameDetilsLink = `/game-details/${currentGame._id}`;
@@ -7,7 +8,6 @@ function CatalogGameCard({ currentGame }) {
 	// 	e.preventDefault();
 	// 	navigationChangeHandler(gameDetilsLink);
 	// }
-
 	return (
 		<div className="allGames">
 			<div className="allGames-info">
