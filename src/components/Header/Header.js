@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import styles from './Header.module.css';
 
 //function Header({ navigationChangeHandler })
 function Header() {
@@ -10,28 +11,49 @@ function Header() {
 	// 	}
 	// };
 
+	let activeLinkStyles = {
+		backgroundColor: 'blue',
+		color: 'white',
+	};
+
 	return (
 		//<header onClick={onHeaderClick}>
 		<header>
 			<h1>
-				<Link to="/">GamesPlay</Link>
+				<NavLink
+					activeClassName={styles['active-title-link']}
+					to="/"
+				>
+					GamesPlay
+				</NavLink>
 				{/* <a className="home" href="/home">
 					GamesPlay
 				</a> */}
 			</h1>
 			<nav>
-				<Link to="/all-games">All games</Link>
+				<NavLink activeStyle={activeLinkStyles} to="/all-games">
+					All games
+				</NavLink>
 				{/* <a href="/all-games">All games</a> */}
 				<div id="user">
-					<Link to="/create-game">Create Game</Link>
+					<NavLink
+						activeStyle={activeLinkStyles}
+						to="/create-game"
+					>
+						Create Game
+					</NavLink>
 					{/* <a href="/create-game">Create Game</a> */}
-					<Link to="/logout">Logout</Link>
+					<NavLink to="/logout">Logout</NavLink>
 					{/* <a href="/logout">Logout</a> */}
 				</div>
 				<div id="guest">
-					<Link to="/login">Login</Link>
+					<NavLink activeStyle={activeLinkStyles} to="/login">
+						Login
+					</NavLink>
 					{/* <a href="/login">Login</a> */}
-					<Link to="/register">Register</Link>
+					<NavLink activeStyle={activeLinkStyles} to="/register">
+						Register
+					</NavLink>
 					{/* <a href="/register">Register</a> */}
 				</div>
 			</nav>
